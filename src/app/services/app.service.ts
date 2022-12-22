@@ -12,7 +12,7 @@ export class AppService {
 
   constructor(private http: HttpClient) {}
   listAccounts() {
-    return this.http.get(`${api}/users/list`);
+    return this.http.get(`${api}/users/api/list`);
   }
 
   // listCandidates() {
