@@ -16,7 +16,7 @@ export class HomeComponent {
 
   ngOnInit(): void {
     this.app.listAccounts().subscribe(  (res: any) =>{      
-        this.showAccounts = res.user;
+        this.showAccounts = res.users;
     })
   }
 
