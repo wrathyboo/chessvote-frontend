@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  showAccounts: any = [];
+  totalContest: any = '';
+  showCandidates: any = [];
+  account: any = [];
 
+  constructor(private app: AppService, ) { }
+
+  ngOnInit(): void {
+    this.app.listAccounts().subscribe(  (res: any) =>{      
+        this.showAccounts = res.contests;
+    })
+  }
+
+  
 }
